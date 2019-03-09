@@ -1,0 +1,249 @@
+body {
+  margin-left: 4em;
+  font-size: 22px;
+  margin-bottom: 400px;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  font-size: 22px;
+}
+
+legend,
+pre,
+code,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: 800;
+}
+
+.example {
+  display: grid;
+  grid-template-columns: 18em auto;
+  margin: 1em 0;
+}
+
+.footer {
+  height: 400px;
+}
+
+body .hljs {
+  background: #f5f5f5;
+}
+
+input[type='text'] {
+  width: 14em;
+}
+
+#alertDiv {
+  margin: 1em 0;
+}
+
+.custom-checkbox,
+.fake-checkbox {
+  position: relative;
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.custom-checkbox input[type='checkbox'],
+.fake-checkbox .checkbox {
+  position: absolute;
+  z-index: -1;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+}
+
+.custom-checkbox input[type='checkbox']:checked ~ label::before,
+.fake-checkbox .checkbox.checked ~ .label::before {
+  color: #fff;
+  background-color: #007bff;
+}
+
+.custom-checkbox input[type='checkbox']:focus ~ label::before,
+.fake-checkbox .checkbox:focus ~ .label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.custom-checkbox input[type='checkbox']:active ~ label::before,
+.fake-checkbox .checkbox:active ~ label::before {
+  color: #fff;
+  background-color: #b3d7ff;
+}
+
+.custom-checkbox label,
+.fake-checkbox .label {
+  margin-bottom: 0;
+}
+
+.custom-checkbox label::before,
+.fake-checkbox .label::before {
+  position: absolute;
+  top: 0.25rem;
+  left: 0;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+  content: '';
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #dee2e6;
+}
+
+.custom-checkbox label::after,
+.fake-checkbox .label::after {
+  position: absolute;
+  top: 0.25rem;
+  left: 0;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  content: '';
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.custom-checkbox label::before,
+.fake-checkbox .label::before {
+  border-radius: 0.25rem;
+}
+
+.custom-checkbox input[type='checkbox']:checked ~ label::before,
+.fake-checkbox .checkbox.checked ~ .label::before {
+  background-color: #007bff;
+}
+
+.custom-checkbox input[type='checkbox']:checked ~ label::after,
+.fake-checkbox .checkbox.checked ~ .label::after {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+}
+
+button {
+  border-radius: 0;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+button {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button:hover, button:focus {
+  text-decoration: none;
+}
+
+button:focus, button.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+button:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+button:not(:disabled):not(.disabled):active, button:not(:disabled):not(.disabled).active {
+  background-image: none;
+}
+
+button {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+button:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+button:focus, button.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+button:not(:disabled):not(.disabled):active, button:not(:disabled):not(.disabled).active,
+.show > button.dropdown-toggle {
+  color: #fff;
+  background-color: #0062cc;
+  border-color: #005cbf;
+}
+
+button:not(:disabled):not(.disabled):active:focus, button:not(:disabled):not(.disabled).active:focus,
+.show > button.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+button {
+  display: block;
+}
+
+button {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 20px;
+}

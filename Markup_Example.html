@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Form Example</title>
+    <link
+      rel="stylesheet"
+      href="Markup_Example_files/highlight/styles/default.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css"
+    />
+    <link rel="stylesheet" href="Markup_Example_files/main.css" />
+    <script src="Markup_Example_files/highlight/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </head>
+  <body>
+    <h1>Sample Form</h1>
+    <form>
+      <h2>Entering text</h2>
+      <fieldset>
+        <legend>Contact Information</legend>
+        <div class="example">
+          <div class="output">
+            <label for="name">Name</label>
+            <br />
+            <input type="text" id="name" />
+          </div>
+          <pre
+            class="input"
+          ><code class="html">&lt;label for="name">Name&lt;/label>
+&lt;input type="text" id="name"/></code></pre>
+        </div>
+        <div class="example">
+          <div class="output">
+            <div id="address">Street Address</div>
+            <input type="text" aria-labelledby="address" />
+          </div>
+          <pre
+            class="input"
+          ><code class="html">&lt;div id="address">Street Address&lt;/div>
+&lt;input type="text" aria-labelledby="address"/></code></pre>
+        </div>
+      </fieldset>
+      <h2>Three ways to implement a checkbox</h2>
+      <ol>
+        <li>
+          <div class="example">
+            <div class="output">
+              <div class="custom-checkbox">
+                <!-- Simplest and most accessible -->
+                <input
+                  type="checkbox"
+                  id="agreeCheckbox"
+                  class="scroll-on-focus"
+                />
+                <label for="agreeCheckbox"
+                  >I agree to the terms of service</label
+                >
+              </div>
+            </div>
+            <pre
+              class="input"
+            ><code class="html">&lt;!-- Simplest and most accessible -->
+&lt;label for="agreeCheckbox">
+  I agree to the terms of service
+&lt;/label>
+&lt;input type="checkbox" id="agreeCheckbox"/></code></pre>
+          </div>
+        </li>
+        <li>
+          <div class="example">
+            <div class="output">
+              <!-- Not very accessible -->
+              <div
+                id="fake-checkbox-control"
+                class="fake-checkbox"
+                onclick="fakeCheckboxClick()"
+              >
+                <span class="checkbox" id="fake-checkbox"></span>
+                <span class="label">I agree to the terms of service</span>
+              </div>
+            </div>
+            <pre><code class="html">&lt;!-- Not very accessible -->
+&lt;div onclick="fakeCheckboxClick()">
+  &lt;span class="checkbox">&lt;/span>
+  &lt;span class="label">I agree to the terms of service&lt;/span>
+&lt;/div>
+
+&lt;script>
+function fakeCheckboxClick() {
+  var checkbox = document.getElementById('fake-checkbox');
+  checkbox.classList.toggle('checked');
+}
+&lt;/script></code></pre>
+          </div>
+        </li>
+
+        <li>
+          <div class="example">
+            <div class="output">
+              <!-- More complex, more accessible -->
+              <div
+                id="fake-checkbox-control-aria"
+                class="fake-checkbox"
+                onclick="ariaCheckboxClick()"
+              >
+                <span
+                  id="fake-checkbox-aria"
+                  class="checkbox scroll-on-focus"
+                  role="checkbox"
+                  aria-labelledby="aria-checkbox-label"
+                  tabindex="0"
+                ></span>
+                <span class="label" id="aria-checkbox-label"
+                  >I agree to the terms of service</span
+                >
+              </div>
+            </div>
+            <pre><code class="html">&lt;!-- More complex, more accessible -->
+&lt;div onclick="ariaCheckboxClick()">
+  &lt;span
+    id="fake-checkbox-aria"
+    role="checkbox"
+    aria-labelledby="aria-checkbox-label"
+    tabindex="0"
+  >&lt;/span>
+  &lt;span class="label" id="aria-checkbox-label">
+    I agree to the terms of service
+  &lt;/span>
+&lt;/div>
+
+&lt;script>
+function ariaCheckboxClick() {
+  var checkbox = document.getElementById('fake-checkbox-aria');
+  checkbox.classList.toggle('checked');
+  checkbox.setAttribute(
+    'aria-checked',
+    checkbox.classList.contains('checked')
+  );
+}
+&lt;/script></code></pre>
+          </div>
+        </li>
+      </ol>
+
+      <h2>Aria alerts</h2>
+      <div class="example">
+        <div class="output">
+          <button type="button" onclick="register()" class="scroll-on-focus btn btn-primary">
+            Register
+          </button>
+          <div id="alertDiv" role="alert"></div>
+        </div>
+        <pre
+            class="input"
+          ><code>&lt;button type="button" onclick="register()">
+  Register
+&lt;/button>
+&lt;div id="alertDiv" role="alert">&lt;/div>
+
+&lt;script>
+function register() {
+  var alertDiv = document.getElementById('alertDiv');
+  var nameElt = document.getElementById('name');
+  alertDiv.innerText = (
+    'Thanks for registering, ' +
+    nameElt.value + '!'
+  );
+}
+&lt;/script></code></pre>
+      </div>
+    </form>
+
+    <script src="Markup_Example_files/main.js"></script>
+  </body>
+</html>
